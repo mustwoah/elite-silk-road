@@ -1,0 +1,26 @@
+{
+  "name": "elite-silk-road",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "@react-three/fiber": "^8.17.10",
+    "@react-three/drei": "^9.115.1",
+    "three": "^0.169.0",
+    "framer-motion": "^11.5.6"
+  },
+  "devDependencies": {
+    "vite": "^5.4.7",
+    "@vitejs/plugin-react": "^4.3.3",
+    "tailwindcss": "^3.4.13",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.47"
+  }
+}
