@@ -1,9 +1,11 @@
 // src/components/Spaceship.jsx
-import { useRef, useFrame } from '@react-three/fiber'
-import { Text3D, Center } from '@react-three/drei'
+import { useRef } from 'react'                    // ← useRef comes from react
+import { useFrame } from '@react-three/fiber'       // ← useFrame comes from fiber
+import { Text3D, Center } from '@react-three/drei'   // ← only these from drei
 
 export default function Spaceship() {
   const ref = useRef()
+
   useFrame((state) => {
     ref.current.position.x = Math.sin(state.clock.elapsedTime * 0.15) * 40
     ref.current.position.y = 8 + Math.sin(state.clock.elapsedTime * 0.3) * 6
@@ -21,7 +23,11 @@ export default function Spaceship() {
         <meshStandardMaterial color="#1a1a1a" metalness={0.95} roughness={0.05} />
       </mesh>
       <Center position={[0, 0, 6]}>
-        <Text3D font="/fonts/helvetiker_regular.typeface.json" size={1.5} height={0.4}>
+        <Text3D
+          font="/fonts/helvetiker_regular.typeface.json"
+          size={1.5}
+          height={0.4}
+        >
           ELITE ONE
           <meshStandardMaterial color="#fbbf24" emissive="#fbbf24" emissiveIntensity={2} />
         </Text3D>
