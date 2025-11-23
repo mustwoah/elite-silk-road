@@ -1,12 +1,13 @@
-import { useRef } from 'react'
-import { useFrame, Text3D, Center } from '@react-three/drei'
+// src/components/Spaceship.jsx
+import { useRef, useFrame } from '@react-three/fiber'
+import { Text3D, Center } from '@react-three/drei'
 
 export default function Spaceship() {
   const ref = useRef()
-  useFrame((s) => {
-    ref.current.position.x = Math.sin(s.clock.elapsedTime * 0.15) * 40
-    ref.current.position.y = 8 + Math.sin(s.clock.elapsedTime * 0.3) * 6
-    ref.current.rotation.y = s.clock.elapsedTime * 0.08
+  useFrame((state) => {
+    ref.current.position.x = Math.sin(state.clock.elapsedTime * 0.15) * 40
+    ref.current.position.y = 8 + Math.sin(state.clock.elapsedTime * 0.3) * 6
+    ref.current.rotation.y = state.clock.elapsedTime * 0.08
   })
 
   return (
